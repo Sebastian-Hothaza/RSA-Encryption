@@ -1,7 +1,7 @@
 CXX = g++
 CXXFLAGS = -std=c++14 -g -MMD -Werror=vla
 EXEC = RSAEncryption.exe
-OBJECTS = main.o Encrypt.o Decrypt.o File_Manage.o
+OBJECTS = main.o Encrypt.o Decrypt.o
 DEPENDS = ${OBJECTS:.o=.d}
 
 ${EXEC}: ${OBJECTS}
