@@ -1,7 +1,7 @@
 CXX = g++
 CXXFLAGS = -std=c++14 -g -MMD -Werror=vla
-EXEC = prog
-OBJECTS = main.o burger.o baseburg.o topping.o decorator.o
+EXEC = RSAEncryption.exe
+OBJECTS = main.o Encrypt.o Decrypt.o File_Manage.o
 DEPENDS = ${OBJECTS:.o=.d}
 
 ${EXEC}: ${OBJECTS}
