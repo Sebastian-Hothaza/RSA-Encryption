@@ -102,7 +102,7 @@ int main(){
         //Pushing encrypted char into vector
         EncryptedNumbers.push_back(c);
     }
-    DumpToText("Encrypted Messages.txt", EncryptedNumbers);
+    DumpToText("Encrypted Message.txt", EncryptedNumbers);
 
     vector <long long> DecryptedNumbers;
     //DECRYPTING
