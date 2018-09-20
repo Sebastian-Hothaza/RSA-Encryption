@@ -42,9 +42,11 @@ int main(){
     ofstream DecryptedNumbersStream;
     ofstream DecryptedMessage;
 
-    // Vectors
+
     vector <string> TextContent;
 
+    cout<<"... Encrypting your message ..."<<endl;
+    
     long long p=GetP();
     long long q=GetQ();
     long long n=GetN(p,q);
@@ -88,6 +90,7 @@ int main(){
         }
     }
     DumpToText("Input in Numbers.txt", NumberToEncrypt);
+
 
     long long m;
     //ENCRYPTING
