@@ -30,11 +30,11 @@ long long GetP(){//GENERATE RANDOM PRIME NUMBER
     srand(time(NULL));
     //Generating a random number between 1 and the square root of long long max. (this is done so that it is imposible for n to exceed long long limitations)
     //Additionally, we have to ensure when multiplying by max ACII value, we don't have overflow!
-    long long p=rand() % 500 + 1;
+    long long p=rand() % 46340 + 1;
     //Checking if primality is true/false and assuring number is greater than 10000 for security integrity
-    while (isPrime(p)==false || p<100){
+    while (isPrime(p)==false || p<10000){
         //If number failed primality test, generate new # and test primality!
-        p=rand() % 500 + 1;
+        p=rand() % 46340 + 1;
     }
     return p;
 }
@@ -43,11 +43,11 @@ long long GetQ() //GENERATE RANDOM PRIME NUMBER
 {
     //Generating a random number between 1 and the square root of long long max. (this is done so that it is imposible for n to exceed long long limitations)
     //Additionally, we have to ensure when multiplying by max ACII value, we don't have overflow!
-    long long q=rand() % 500 + 1;
+    long long q=rand() % 46340 + 1;
     //Checking if primality is true/false and assuring number is greater than 10000 for security integrity
-    while (isPrime(q)==false || q<100){
+    while (isPrime(q)==false || q<10000){
         //If number failed primality test, generate new # and test primality!
-        q=rand() % 500 + 1;
+        q=rand() % 46340 + 1;
     }
     return q;
 }
