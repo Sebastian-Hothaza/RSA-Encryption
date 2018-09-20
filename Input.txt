@@ -1,3 +1,1 @@
-aaaa
-bb
-c
+Here is some sample text. This will be encrypted, then decrypted. Program will also produce text files to demonstrate this process.
