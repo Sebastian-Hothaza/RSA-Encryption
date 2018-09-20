@@ -10,7 +10,7 @@
 using namespace std;
 
 /*
-
+Given an Input.txt file, this program will encrypt/decrypt the message using the RSA Encryption Algorithm
 */
 
 //DUMPS A VECTOR TO A TEXT FILE
@@ -24,13 +24,11 @@ void DumpToText(string filename, vector <long long> Vect){
     OutputFile.close();
 }
 
-string AsciiToText (vector <long long> Vect) //TURNS ASCII VALUES TO TEXT
-{
+string AsciiToText (vector <long long> Vect){ //TURNS ASCII VALUES TO TEXT
     //Declaring variables
     string text;
     //Taking each vector slot at a time and converting that number (which corresponds to the Ascii value) and turning it long longo text
-    for (long long i=0; i<(long long)Vect.size(); i++)
-    {
+    for (long long i=0; i<(long long)Vect.size(); i++){
         text.push_back((char)Vect[i]);
     }
     return text;
@@ -54,7 +52,6 @@ int main(){
     long long e=GetE(PHI);
     long long d=GetD(PHI, e);
 
-    
 
 	//Opening the File containing the user input
     InputFile.open("Input.txt", ios::in);

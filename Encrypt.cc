@@ -2,18 +2,11 @@
 #include <cstdlib>
 #include <iostream>
 
-bool isPrime(long long number) //CHECKS IF NUMBER IS PRIME
-{
-    //Testing all numbers
-    for (long long i=2; i<number; i++)
-    {
-        //If a factor is found, number is not prime and we can exit
+bool isPrime(long long number){ 
+    for (long long i=2; i<number; i++){
         if (number%i==0)
-        {
             return false;
-        }
     }
-    //if no factors are found, we know number is prime and thus we can exit
     return true;
 }
 
@@ -24,8 +17,7 @@ long long Encrypt(long long b, long long e, long long m){ //ENCRYPTS
     //This section uses algorithms from Wikipedia; specifically the Right-to-left binary method under Modular Exponentiation. It has been implemented below
     long long result=1;
     b=b%m;
-    while (e>0)
-    {
+    while (e>0){
         if (e%2==1)
             result=(result*b)%m;
         e=e>>1;
@@ -60,9 +52,7 @@ long long GetQ() //GENERATE RANDOM PRIME NUMBER
     return q;
 }
 
-long long GetN(long long p, long long q) //GET N=PQ
-{
-    //Declaring variables and calculating n.
+long long GetN(long long p, long long q){
     long long n=p*q;
     //If n<0, then p*q resulted in an overflow which results in a negative number. This should never happen due to how p and q is generated.
     if (n<0){
@@ -73,30 +63,24 @@ long long GetN(long long p, long long q) //GET N=PQ
 }
 
 
-long long GetPHI(long long p, long long q) //GETS PHI=(p-1)*(q-1)
-{
+long long GetPHI(long long p, long long q){
     //Declaring variables and getting the value of PHI
     long long PHI=(p-1)*(q-1);
     return PHI;
 }
 
-long long GetE(long long PHI) //GENERATE RANDOM PRIME NUMBER<PHI
-{
+long long GetE(long long PHI){ //GENERATE RANDOM PRIME NUMBER<PHI
     srand(time(NULL));
     //Generate random number between 1 and PHI
     long long e=rand() % PHI + 1;
-    //Checking if primality is true/false
-    while (isPrime(e)==false)
-    {
+    while (isPrime(e)==false){
         //If number failed primality test, generate new # and test primality!
         e=rand() % PHI + 1;
     }
     return e;
 }
 
-long long GetD(long long PHI, long long e) //GETS PRIVATE KEY
-{
-    //Declaring Variables (q is quotient, r is remainder)
+long long GetD(long long PHI, long long e){ //GETS PRIVATE KEY
     long long s1;
     long long t1;
     long long r1;
@@ -142,7 +126,6 @@ long long GetD(long long PHI, long long e) //GETS PRIVATE KEY
         r2=rfinal;
         q2=qfinal;
     }
-    //From chart, we can pull the correct answer.
     long long d=t2;
 
     //Negative values are irrelevant and thus turned to positive
